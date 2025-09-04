@@ -1,5 +1,6 @@
 // El principal objetivo de este desafío es fortalecer tus habilidades en lógica de programación. Aquí deberás desarrollar la lógica para resolver el problema.
 let amigos = [];
+let anteriormenteSorteado = [];
 agregarAmigo();
 recorrelista(amigos);
 
@@ -29,16 +30,20 @@ function recorrelista (lista) {
 };
 
 function sortearAmigo (lista) {
-    if (lista != []){
-        let numeroGenerado = Math.floor(Math.random()*(lista.length));
-        console.log(numeroGenerado);
-        let ganador = lista[numeroGenerado];
-        console.log(ganador);
-        document.getElementById('listaAmigos').innerHTML='';
-        let elem = document.getElementById('resultado');
-        let elementli = `<li>Tu amigo secreto es ${lista[numeroGenerado]}</li>`;
-        elem.innerHTML=elementli;
+    if (lista.length < 3 && lista.length > 0){
+        alert("Debes ingresar a lo menos 3 amigos para que esto tenga sentido");
+    } else if (lista.length > 2){
+            let numeroGenerado = Math.floor(Math.random()*(lista.length));
+            document.getElementById('listaAmigos').innerHTML='';
+            let elem = document.getElementById('resultado');
+            let elementli = `<li>Tu amigo secreto es ${lista[numeroGenerado]}</li>`;
+            elem.innerHTML=elementli;
     } else {
-        alert("Ingresael nombre de tus amigos por favor");
+            alert("Ingresa el nombre de tus amigos por favor");
     }
+}
+
+function condicionesIniciales (){
+    document.getElementById('amigo').innerHTML='';
+    document.getElementById
 }
